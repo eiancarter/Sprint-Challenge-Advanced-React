@@ -1,13 +1,13 @@
 import React from 'react';
 import Enzyme, { shallow, mount } from 'enzyme';
 // import '@testing-library/jest-dom/extend-expect';
-import useDarkMode from './useDarkMode';
+import PlayerCard from './PlayerCard';
 
 Enzyme.configure({ adapter: new Adapter() });
 
-describe('dark mode component', () => {
+describe('player card component', () => {
     test('renders', () => {
-        const wrapper = shallow(<useDarkMode />);
+        const wrapper = shallow(<PlayerCard />);
         
         expect(wrapper.exists()).toBe(true);
     })
