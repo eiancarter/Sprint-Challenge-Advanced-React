@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import PlayerCard from './components/PlayerCard';
+import Navbar from './components/Navbar';
 import axios from 'axios';
 
 class App extends Component {
@@ -19,7 +20,7 @@ class App extends Component {
     .then(response => {
       console.log(response)
       this.setState({
-        followers: response.data
+        players: response.data
       });
     })
     .catch( error => {
@@ -38,9 +39,12 @@ class App extends Component {
 
   render() {
     return (
+      <>
+      <Navbar />
       <div className="App">
         <PlayerCard players={this.state.players} />
       </div>
+      </>
     );
   }
 }
